@@ -8,6 +8,7 @@ const createUser = (user, callback) => {
 
   userData.save((err, response) => {
     if(err) {
+      console.log("from here");
       logger.error(err);
       return callback(err, null);
     }

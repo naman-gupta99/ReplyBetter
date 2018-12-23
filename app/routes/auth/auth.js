@@ -43,9 +43,10 @@ router.post('/login', (req, res) => {
         }
         if (!usr) {
           // eslint-disable-next-line
-          user.rollNo = user.email.split('@')[0].split('_')[1];
+          user.name = user.email.split('@')[0].split('_')[1] || "Default Name";
           authController.createUser(user, (err1, newUser) => {
             if (err1) {
+              console.log("here");
               logger.error(err1);
               return callback(err1, null);
             }
