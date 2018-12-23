@@ -2,15 +2,13 @@
   post:
     parameters:
       - in: body
-        name: login credentials
+        name: Login Credentials
         required: true
-        description: for user login or signup
+        description: For Login Details or User Sign Up
         schema:
           type: object
           properties:
             token:
-              type: string
-            provider:
               type: string
     tags:
       - auth
@@ -32,7 +30,6 @@
                 properties:
                   token:
                       type: string
-      400:
-        description: User already exists
+
       401:
         description: Unauthorised request

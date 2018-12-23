@@ -34,6 +34,7 @@ const swagger = (app) => {
   // serve swagger
   app.get('/swagger.json', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.send(swaggerSpec);
   });
 };
